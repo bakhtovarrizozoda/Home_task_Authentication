@@ -1,0 +1,59 @@
+﻿@model UserViewModel 
+
+<style>
+    .form-container {
+        width: 500px;
+        height: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+    .form-container label {
+        display: block;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .form-container input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        margin-top: 40px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .form-container input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="form-container">
+    <form action="login" method="post">
+        <h1 style="text-align: center; margin-top: 10px; font-weight: bold;">Login</h1>
+        <label for="Username">Username</label>
+        <input type="text" id="Username" name="Username">
+
+        <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl">
+
+        <label for="Password">Password</label>
+        <input type="password" id="Password" name="Password">
+
+        <input type="submit" value="Login">
+    </form>
+</div>
